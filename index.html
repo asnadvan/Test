@@ -101,3 +101,90 @@
     text-decoration: underline;
   }
   footer {
+    background-color: #f2f2f2;
+    padding: 20px 15px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    line-height: 1.6;
+    border-top: 1px solid #ddd;
+  }
+  @media (max-width: 600px) {
+    .services .service-item, .service-details {
+      width: 90%;
+    }
+    .contact {
+      flex-direction: column;
+      text-align: center;
+    }
+    .contact .left, .contact .right {
+      margin: 10px 0;
+      flex: none;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  صدور مدارک قانونی با استعلام
+</header>
+<main>
+  <section>
+    <h2>انجام خدمات</h2>
+    <div class="services">
+      <div class="service-item" data-index="0">معافیت از خدمت</div>
+      <div class="service-details" id="details-0">
+        معافیت کفالت، معافیت پزشکی، پایان خدمت<br />
+        قابلیت ادامه تحصیل استخدامی و پاسپورت برای خارج کشور
+      </div>
+
+      <div class="service-item" data-index="1">مدرک تحصیلی</div>
+      <div class="service-details" id="details-1">
+        قابلیت ادامه تحصیل استخدامی و ارائه محل کار
+      </div>
+
+      <div class="service-item" data-index="2">گواهینامه رانندگی</div>
+      <div class="service-details" id="details-2">
+        پایه سوم دوم یکم ویژه موتورسیکلت<br />
+        بدون آزمون و کلاس
+      </div>
+    </div>
+  </section>
+  <section class="contact">
+    <div class="left">
+      مظفری کارشناس ۳۶۱<br />
+      <small>با بیش از ۹ سال سابقه در صدور</small>
+    </div>
+    <div class="right">
+      <strong>راه‌های ارتباط</strong><br />
+      واتس‌اپ یا تلگرام پیام دهید<br />
+      <a href="https://wa.me/989224928008" target="_blank" rel="noopener">09224928008</a>
+      <a href="https://wa.me/989963508374" target="_blank" rel="noopener">09963508374</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>خرید معافیت از خدمت بصورت معتبر</p>
+  <p>قابلیت ادامه تحصیل استخدامی یا پاسپورت برای خارج از کشور</p>
+  <p>خرید مدرک تحصیلی در هر مقطع و رشته</p>
+  <p>قابلیت ادامه تحصیل استخدامی و ارائه محل کار برای ارتقاع شغلی</p>
+  <p>خرید گواهینامه رانندگی بدون هیچ آزمون کلاسی</p>
+  <p>پایه سوم دوم یکم ویژه موتورسیکلت</p>
+</footer>
+<script>
+  document.querySelectorAll('.service-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const index = item.getAttribute('data-index');
+      const detail = document.getElementById('details-' + index);
+      if (detail.style.display === 'block') {
+        detail.style.display = 'none';
+      } else {
+        document.querySelectorAll('.service-details').forEach(d => d.style.display = 'none');
+        detail.style.display = 'block';
+        detail.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+    });
+  });
+</script>
+</body>
+</html>
