@@ -12,7 +12,7 @@
     margin: 0; padding: 0;
   }
   header {
-    background-color: #4a6fa5; /* رنگ استخوانی خاکستری-آبی */
+    background-color: #4a6fa5;
     color: #e0e0e0;
     padding: 20px 10px;
     text-align: center;
@@ -31,73 +31,73 @@
   h2 {
     color: #555;
     margin-bottom: 15px;
-    border-bottom: 2px solid #4a6fa5;
     padding-bottom: 8px;
+    text-align: center;
   }
   .services {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
     margin-bottom: 40px;
   }
   .service-item {
     background-color: #e7eaf1;
     border-radius: 8px;
-    padding: 20px 25px;
-    flex: 1 1 250px;
+    padding: 15px 25px;
+    width: 60%;
     text-align: center;
     font-weight: 600;
     color: #34495e;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    user-select: none;
     transition: background-color 0.3s ease;
   }
   .service-item:hover {
     background-color: #d2d9ea;
   }
+  .service-details {
+    max-width: 60%;
+    margin: 0 auto 20px auto;
+    background-color: #f0f4fc;
+    border-radius: 0 0 8px 8px;
+    color: #2c3e50;
+    padding: 12px 25px;
+    font-weight: normal;
+    line-height: 1.5;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  }
   .contact {
-    text-align: center;
-    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f9fc;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     color: #333;
+    font-size: 1rem;
     line-height: 1.6;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
   }
-  .contact strong {
+  .contact .left, .contact .right {
+    flex: 1 1 250px;
+    margin: 5px 10px;
+  }
+  .contact .left {
+    font-weight: 600;
     color: #4a6fa5;
-    font-weight: 700;
   }
-  .contact a {
+  .contact .right a {
     color: #4a6fa5;
     text-decoration: none;
     font-weight: 600;
+    display: block;
+    margin: 4px 0;
   }
-  .contact a:hover {
+  .contact .right a:hover {
     text-decoration: underline;
   }
-  @media (max-width: 600px) {
-    .services {
-      flex-direction: column;
-    }
-  }
-</style>
-</head>
-<body>
-<header>
-  صدور مدارک قانونی با استعلام
-</header>
-<main>
-  <section>
-    <h2>انجام خدمات:</h2>
-    <div class="services">
-      <div class="service-item">گواهینامه رانندگی</div>
-      <div class="service-item">معافیت از خدمت</div>
-      <div class="service-item">مدرک تحصیلی در هر مقطع و رشته</div>
-    </div>
-  </section>
-  <section class="contact">
-    <h2>راه‌های ارتباط</h2>
-    <p>واتس‌اپ یا تلگرام پیام دهید:</p>
-    <p><strong><a href="https://wa.me/989224928008" target="_blank" rel="noopener">09224928008</a></strong></p>
-  </section>
-</main>
-</body>
-</html>
+  footer {
